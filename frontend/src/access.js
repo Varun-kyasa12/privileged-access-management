@@ -1,0 +1,1 @@
+export const can=(p,x)=>Boolean(p?.permissions?.includes(x));export const canAdmin=p=>can(p,'USER_VIEW')&&can(p,'USER_MANAGE');export const allowedApps=p=>(p?.applications||[]).filter(a=>can(p,a.name+'_VIEW'));export const destination=(r,a)=>!a&&!['home','login','register','mfa'].includes(r)?'login':r;
